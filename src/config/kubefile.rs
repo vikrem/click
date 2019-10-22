@@ -164,7 +164,7 @@ impl Exec {
 
     fn generate_token(&self) -> String {
         let mut filtered_env: HashMap<String, String> = HashMap::new();
-        for e in self.env.clone().unwrap() {
+        for e in self.env.clone().unwrap_or_default() {
             filtered_env.insert(e.name, e.value);
         }
 
